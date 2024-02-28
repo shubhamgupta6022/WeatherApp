@@ -2,7 +2,6 @@ package com.example.weather.ui.home
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +24,6 @@ import kotlinx.coroutines.flow.onEach
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: HomeViewModel
-    private val TAG = "HomeFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +39,6 @@ class HomeFragment : Fragment() {
         viewModel.states.onEach {
             when (it) {
                 is HomeScreenViewStates.WeatherResponse -> {
-                    Log.d(TAG, "HomeScreenViewStates: WeatherResponse, ${it.list}")
                     binding.apply {
                         tvCity.text = it.list.name
                         tvTemperature.text = it.list.temp.toInt().toString()
@@ -59,7 +56,6 @@ class HomeFragment : Fragment() {
                 }
 
                 is HomeScreenViewStates.PageLoading -> {
-                    Log.d(TAG, "HomeScreenViewStates: PageLoading")
                     setProgressBarVisibility(true)
                 }
 

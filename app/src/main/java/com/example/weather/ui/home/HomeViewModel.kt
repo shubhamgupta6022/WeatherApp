@@ -1,13 +1,11 @@
 package com.example.weather.ui.home
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weather.common.Constants
 import com.example.weather.common.Resource
 import com.example.weather.common.toCelsius
 import com.example.weather.data.OpenWeatherMapApi
-import com.example.weather.data.remote.dto.weatherresponsedto.WeatherResponseDto
 import com.example.weather.data.repo.HomeRepoImpl
 import com.example.weather.domain.model.ForeCastData
 import com.example.weather.domain.model.WeatherData
@@ -31,7 +29,6 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getCurrentWeatherUseCase: GetCurrentWeatherUseCase
 ) : ViewModel() {
-    private val TAG = "HomeViewModel"
 
     private var _states = MutableSharedFlow<HomeScreenViewStates>()
     val states = _states.asSharedFlow()
@@ -46,24 +43,21 @@ class HomeViewModel @Inject constructor(
         getCurrentWeatherUseCase().onEach {
             when (it) {
                 is Resource.Success -> {
-                    Log.d(TAG, "getCurrentWeatherUseCase Success: ${it.data}")
                     if (it.data is WeatherData) {
                         scope.launch {
                             _states.emit(HomeScreenViewStates.WeatherResponse(it.data.copy(temp = it.data.temp.toCelsius())))
                         }
-//                        getForeCastResponse()
+                        getForeCastResponse()
                     }
                 }
 
                 is Resource.Error -> {
-                    Log.d(TAG, "getCurrentWeatherUseCase Error: ${it.message}")
                     scope.launch {
                         _states.emit(HomeScreenViewStates.ApiError(it.message))
                     }
                 }
 
                 is Resource.Loading -> {
-                    Log.d(TAG, "getCurrentWeatherUseCase Loading")
                     scope.launch {
                         _states.emit(HomeScreenViewStates.PageLoading())
                     }
@@ -83,7 +77,6 @@ class HomeViewModel @Inject constructor(
         getWeatherForecastUseCase().onEach {
             when (it) {
                 is Resource.Success -> {
-                    Log.d(TAG, "getWeatherForecastUseCase Success: ${it.data}")
                     scope.launch {
                         if (it.data is ForeCastData) {
                             _states.emit(HomeScreenViewStates.WeatherForeCastResponse(it.data))
@@ -91,13 +84,9 @@ class HomeViewModel @Inject constructor(
                     }
                 }
 
-                is Resource.Error -> {
-                    Log.d(TAG, "getWeatherForecastUseCase Error: ${it.message}")
-                }
+                is Resource.Error -> {}
 
-                is Resource.Loading -> {
-                    Log.d(TAG, "getWeatherForecastUseCase Loading")
-                }
+                is Resource.Loading -> {}
             }
         }.launchIn(viewModelScope)
     }
