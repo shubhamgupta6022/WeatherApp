@@ -1,5 +1,6 @@
 package com.example.weather.data.remote.dto.forecastreponsedto
 
+import com.example.weather.common.toCelsius
 import com.example.weather.domain.model.ForeCastWeatherItem
 
 data class ForeCastList(
@@ -16,5 +17,6 @@ data class ForeCastList(
 
 fun ForeCastList.toForeCastWeatherItem() = ForeCastWeatherItem(
     temp = this.main.temp,
-    date = this.dt_txt
+    date = this.dt_txt,
+    tempInCelsius = this.main.temp.toCelsius().toInt().toString()
 )

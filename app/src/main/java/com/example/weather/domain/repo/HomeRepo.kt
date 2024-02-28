@@ -4,6 +4,6 @@ import com.example.weather.data.remote.dto.forecastreponsedto.ForeCastResponse
 import com.example.weather.data.remote.dto.weatherresponsedto.WeatherResponseDto
 
 interface HomeRepo {
-    suspend fun getWeatherForeCase(): ForeCastResponse
+    suspend fun getWeatherForeCast(): ForeCastResponse
     suspend fun getCurrentWeather(): WeatherResponseDto
 }
