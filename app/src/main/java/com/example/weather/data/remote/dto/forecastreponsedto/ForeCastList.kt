@@ -1,5 +1,7 @@
 package com.example.weather.data.remote.dto.forecastreponsedto
 
+import com.example.weather.domain.model.ForeCastWeatherItem
+
 data class ForeCastList(
     val clouds: Clouds,
     val dt: Int,
@@ -10,4 +12,9 @@ data class ForeCastList(
     val visibility: Int,
     val weather: List<Weather>,
     val wind: Wind
+)
+
+fun ForeCastList.toForeCastWeatherItem() = ForeCastWeatherItem(
+    temp = this.main.temp,
+    date = this.dt_txt
 )

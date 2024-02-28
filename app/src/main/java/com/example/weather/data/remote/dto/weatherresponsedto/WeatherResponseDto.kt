@@ -1,5 +1,7 @@
 package com.example.weather.data.remote.dto.weatherresponsedto
 
+import com.example.weather.domain.model.WeatherData
+
 data class WeatherResponseDto(
     val base: String,
     val clouds: Clouds,
@@ -14,4 +16,9 @@ data class WeatherResponseDto(
     val visibility: Int,
     val weather: List<Weather>,
     val wind: Wind
+)
+
+fun WeatherResponseDto.toWeatherData() = WeatherData(
+    name = this.name,
+    temp = this.main.temp
 )
