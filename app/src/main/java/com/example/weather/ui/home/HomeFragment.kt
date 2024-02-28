@@ -87,9 +87,8 @@ class HomeFragment : Fragment() {
 
     private fun openBottomSheet(data: ForeCastData) {
         val bottomSheet = WeatherForecastBottomSheetFragment.newInstance(data)
-        activity?.supportFragmentManager?.let {
-            bottomSheet.show(it, bottomSheet.tag)
-        }
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(binding.bottomSheetLayout.id, bottomSheet)?.commit()
     }
 
     private fun setProgressBarVisibility(isVisible: Boolean) {

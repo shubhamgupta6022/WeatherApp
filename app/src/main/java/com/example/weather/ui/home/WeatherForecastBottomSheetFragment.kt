@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.weather.R
 import com.example.weather.databinding.WeatherForecastBottomSheetFragmentBinding
 import com.example.weather.domain.model.ForeCastData
 import com.example.weather.ui.home.adapter.WeatherForecastAdapter
@@ -23,6 +24,11 @@ class WeatherForecastBottomSheetFragment : BottomSheetDialogFragment() {
                 this.data = data
             }
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style.AppBottomSheetDialogTheme)
     }
 
     override fun onCreateView(
