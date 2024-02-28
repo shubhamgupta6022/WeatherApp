@@ -42,7 +42,7 @@ class HomeViewModel @Inject constructor(
         getCurrentWeatherResponse()
     }
 
-    private fun getCurrentWeatherResponse() {
+    fun getCurrentWeatherResponse() {
         getCurrentWeatherUseCase().onEach {
             when (it) {
                 is Resource.Success -> {
@@ -51,7 +51,7 @@ class HomeViewModel @Inject constructor(
                         scope.launch {
                             _states.emit(HomeScreenViewStates.WeatherResponse(it.data.copy(temp = it.data.temp.toCelsius())))
                         }
-                        getForeCastResponse()
+//                        getForeCastResponse()
                     }
                 }
 
