@@ -3,7 +3,7 @@ package com.example.weather.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.weather.R
-import com.example.weather.ui.home.HomeFragment
+import com.example.weather.ui.fragments.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

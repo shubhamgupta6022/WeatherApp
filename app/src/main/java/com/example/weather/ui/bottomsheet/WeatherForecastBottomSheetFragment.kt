@@ -1,4 +1,4 @@
-package com.example.weather.ui.home
+package com.example.weather.ui.bottomsheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weather.R
 import com.example.weather.databinding.WeatherForecastBottomSheetFragmentBinding
 import com.example.weather.domain.model.ForeCastData
-import com.example.weather.ui.home.adapter.WeatherForecastAdapter
+import com.example.weather.ui.adapter.WeatherForecastAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class WeatherForecastBottomSheetFragment : BottomSheetDialogFragment() {

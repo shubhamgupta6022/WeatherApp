@@ -1,9 +1,8 @@
 package com.example.weather.data.repo
 
-import com.example.weather.data.OpenWeatherMapApi
+import com.example.weather.data.service.OpenWeatherMapApi
 import com.example.weather.data.remote.dto.forecastreponsedto.ForeCastResponse
 import com.example.weather.data.remote.dto.weatherresponsedto.WeatherResponseDto
-import com.example.weather.domain.model.WeatherData
 import com.example.weather.domain.repo.HomeRepo
 import javax.inject.Inject
 

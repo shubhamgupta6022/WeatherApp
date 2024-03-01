@@ -1,4 +1,4 @@
-package com.example.weather.data
+package com.example.weather.data.service
 
 import com.example.weather.data.remote.dto.forecastreponsedto.ForeCastResponse
 import com.example.weather.data.remote.dto.weatherresponsedto.WeatherResponseDto

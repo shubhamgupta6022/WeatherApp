@@ -1,4 +1,4 @@
-package com.example.weather.common
+package com.example.weather.data.common
 
 sealed class Resource<T>(val data: T? = null, val message: String? = null) {
     class Success<T>(data: T) : Resource<T>(data)

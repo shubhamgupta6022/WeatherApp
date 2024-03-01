@@ -1,7 +1,7 @@
 package com.example.weather.di
 
 import com.example.weather.common.Constants
-import com.example.weather.data.OpenWeatherMapApi
+import com.example.weather.data.service.OpenWeatherMapApi
 import com.example.weather.data.repo.HomeRepoImpl
 import com.example.weather.domain.repo.HomeRepo
 import dagger.Module

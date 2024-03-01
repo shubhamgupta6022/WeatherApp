@@ -1,6 +1,6 @@
 package com.example.weather.domain.usecase
 
-import com.example.weather.common.Resource
+import com.example.weather.data.common.Resource
 import com.example.weather.data.remote.dto.forecastreponsedto.toForeCastData
 import com.example.weather.domain.repo.HomeRepo
 import kotlinx.coroutines.flow.flow
