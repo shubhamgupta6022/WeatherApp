@@ -6,7 +6,7 @@ import com.example.weather.data.remote.dto.weatherresponsedto.WeatherResponseDto
 import com.example.weather.domain.repo.HomeRepo
 import javax.inject.Inject
 
-class HomeRepoImpl @Inject constructor(val api: OpenWeatherMapApi) : HomeRepo {
+class HomeRepoImpl @Inject constructor(private val api: OpenWeatherMapApi) : HomeRepo {
     override suspend fun getWeatherForeCast(): ForeCastResponse {
         return api.getWeatherForeCast()
     }

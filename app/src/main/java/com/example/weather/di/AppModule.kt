@@ -2,8 +2,6 @@ package com.example.weather.di
 
 import com.example.weather.common.Constants
 import com.example.weather.data.service.OpenWeatherMapApi
-import com.example.weather.data.repo.HomeRepoImpl
-import com.example.weather.domain.repo.HomeRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,9 +22,4 @@ object AppModule {
         .build()
         .create(OpenWeatherMapApi::class.java)
 
-    @Singleton
-    @Provides
-    fun provideHomeRepo(api: OpenWeatherMapApi) : HomeRepo {
-        return HomeRepoImpl(api)
-    }
 }
