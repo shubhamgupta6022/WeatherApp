@@ -1,4 +1,4 @@
-package com.example.weather.data.states
+package com.example.weather.ui.states
 
 import com.example.weather.domain.model.ForeCastData
 import com.example.weather.domain.model.WeatherData

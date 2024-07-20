@@ -12,7 +12,7 @@ import com.example.weather.common.Constants
 import com.example.weather.databinding.FragmentHomeBinding
 import com.example.weather.databinding.SnackbarLayoutBinding
 import com.example.weather.domain.model.ForeCastData
-import com.example.weather.data.states.HomeScreenViewStates
+import com.example.weather.ui.states.HomeScreenViewStates
 import com.example.weather.ui.bottomsheet.WeatherForecastBottomSheetFragment
 import com.example.weather.ui.viewmodel.HomeViewModel
 import com.google.android.material.snackbar.Snackbar

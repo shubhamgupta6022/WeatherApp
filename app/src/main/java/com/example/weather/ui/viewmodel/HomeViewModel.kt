@@ -3,13 +3,13 @@ package com.example.weather.ui.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weather.common.Constants
-import com.example.weather.data.common.Resource
+import com.example.weather.common.Resource
 import com.example.weather.common.toCelsius
 import com.example.weather.data.service.OpenWeatherMapApi
 import com.example.weather.data.repo.HomeRepoImpl
 import com.example.weather.domain.model.ForeCastData
 import com.example.weather.domain.model.WeatherData
-import com.example.weather.data.states.HomeScreenViewStates
+import com.example.weather.ui.states.HomeScreenViewStates
 import com.example.weather.domain.usecase.GetCurrentWeatherUseCase
 import com.example.weather.domain.usecase.GetWeatherForecastUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
